@@ -8,6 +8,9 @@ export class GridControls {
   ) {}
 
   update() {
+    if (this.input.keyboard === null) {
+      return;
+    }
     const cursors = this.input.keyboard.createCursorKeys();
     if (cursors.left.isDown) {
       this.gridPhysics.movePlayer(Direction.LEFT);
